@@ -7,7 +7,7 @@ Setting up an application that manages accounts following the CQRS (Command Quer
 
 ## Plan
 
-- <a href="#1">application.properties </a>
+- <a href="#section1">application.properties </a>
 - <a href="#2">pom.xml</a>
 - <a href="#3">Command Api</a>
 - <a href="#4">Commands</a>
@@ -15,7 +15,7 @@ Setting up an application that manages accounts following the CQRS (Command Quer
 - <a href="#6">CompteCqrsEsApplication</a>
 - <a href="#7">Execution</a>
 
-<h2 id="1"> application.properties</h2>
+<h2 id="section1"> application.properties</h2>
 It contains configuration properties related to the application's name, database connection, Hibernate settings, and the server's port.
 
 ```
