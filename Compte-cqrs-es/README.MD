@@ -95,6 +95,7 @@ the POM file configures a Spring Boot application with dependencies for data acc
 ```
 
 <h2 id="3">Command Api</h2>
+
 ### Commands 
 <ul>
 <li><b>BaseCommand:</b></li>This class is using the Lombok library's @Getter annotation to generate a getter method for the id field, and the @TargetAggregateIdentifier annotation from the Axon Framework. By using these annotations and this base class, you can create specific command classes that inherit from BaseCommand and use the @TargetAggregateIdentifier annotation on their identifier field, which is a common pattern in Axon-based CQRS (Command-Query Responsibility Segregation) applications.
@@ -298,6 +299,7 @@ public class AccountDebitedEvent extends BaseEvent<String>{
 </ul>
 
 ### Queries 
+
 <ul><li><b>GetAccountByIdQuery:</b>The 'GetAccountByIdQuery' class appears to be a data class used for querying account information by its identifier. This class is commonly used in applications with a CQRS (Command-Query Responsibility Segregation) architecture, where queries are used to retrieve data without modifying the state of the system. In this case, 'GetAccountByIdQuery' allows you to request account information by specifying the account's identifier as a query parameter.
 
 ```
@@ -314,6 +316,7 @@ public class GetAccountByIdQuery {
 </li></ul>
 
 ### Enums 
+
 <ul><li><b>AccountStatus: </b>The 'AccountStatus' enum represents the possible states or statuses that an account can have.
 
 ```
@@ -334,6 +337,7 @@ public enum OperationType {
 </li></ul>
 
 ### Exceptions
+
 <ul><li><b>AmountNegativeExceprion: </b>The 'AmountNegativeException' class appears to be a custom exception class that extends the 'RuntimeException' class. It's designed to represent an exception situation in your application when a negative amount is encountered.
 
 ```
@@ -361,7 +365,9 @@ public class BalanceNotSufficientException extends RuntimeException {
 </ul>
 
 <h2 id="4">Commands </h2>
+
 ### Aggregates 
+
 <ul><li><b>AccountAggregate: </b> The AccountAggregate class represents an aggregate in the context of Axon Framework, often used in Domain-Driven Design (DDD) and CQRS (Command-Query Responsibility Segregation) architectures. This aggregate appears to manage account-related operations, such as creating, crediting, and debiting accounts, as well as handling account status changes.
 
 ```
@@ -444,6 +450,7 @@ public class AccountAggregate {
 </li></ul>
 
 ### Controllers
+
 <ul><li><b>AccountCommandController: </b>The 'AccountCommandController' class is a Spring Boot controller responsible for handling various REST API endpoints related to account commands. This controller serves as the entry point for handling account-related commands, and it interfaces with the Axon Framework to send commands and query events from the event store. The @ExceptionHandler is used to handle exceptions that may occur during these operations and return appropriate HTTP responses.
 
 ```
@@ -501,7 +508,9 @@ public class AccountCommandController {
 </li></ul>
 
 <h2 id="5">Query</h2> 
+
 ### Entities 
+
 <ul><li><b>Account: </b>The 'Account' class appears to be a JPA (Java Persistence API) entity class representing an account in the application. The 'Account' entity class is designed to be stored in a database and is used to represent account data, including the balance, status, currency, and related operations. The @Entity and JPA annotations facilitate the persistence of this data in a relational database.
 
 ```
@@ -542,6 +551,7 @@ public class Operation {
 </li></ul>
 
 ### Repository 
+
 <ul><li><b>AccountRepository: </b> The 'AccountRepository' interface is a Spring Data JPA repository interface that extends the 'JpaRepository' interface. It is used for interacting with the database and performing CRUD (Create, Read, Update, Delete) operations on 'Account' entities.
 
 ```
@@ -566,6 +576,7 @@ public interface OperationRepository extends JpaRepository<Operation,Long> {
 </ul>
 
 ### Controllers
+
 <ul><li><b>AccountQueryController: </b>The 'AccountQueryController' is a Spring Boot controller responsible for handling HTTP requests related to queries for account data. The queryGateway is used to send queries to the CQRS (Command-Query Responsibility Segregation) system. In the case of the AccountQueryController, it sends queries to retrieve account data based on the specified criteria. The results of these queries are then returned as responses to the HTTP requests.
 
 This controller is responsible for serving read-only operations, querying data, and providing responses to clients based on the information stored in the system. It's a typical use case in CQRS architectures, where you have separate components for handling commands and queries.
@@ -598,6 +609,7 @@ public class AccountQueryController {
 </li></ul>
 
 ### Service 
+
 <ul><li><b>AccountServiceHandler: </b>The 'AccountServiceHandler' is a service class responsible for handling events and queries related to accounts and their associated operations. It serves as the backend logic for processing events and queries within a CQRS (Command-Query Responsibility Segregation) architecture. 
 
 ```
@@ -684,6 +696,7 @@ public class AccountServiceHandler {
 </li></ul>
 
 <h2 id="6">CompteCqrsEsApplication</h2>
+
 The CompteCqrsEsApplication class is the entry point of the Spring Boot application. It's annotated with @SpringBootApplication, indicating that this class is the main application class, and it triggers the Spring Boot application setup.
 
 ```
@@ -703,6 +716,7 @@ public class CompteCqrsEsApplication {
 <h2 id="7">Execution</h2>
 
 ### Our Database
+
 <img src="Images/Tables.png"> 
 
 ### Create an account with Postman 
