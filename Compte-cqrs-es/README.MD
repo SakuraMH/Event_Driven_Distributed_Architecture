@@ -262,7 +262,7 @@ public class AccountActivatedEvent extends BaseEvent<String>{
 ```
 
 </li>
-<li><b>AccountCreditedEvent: </b> The 'AccountCreditedEvent' class represents an event that is raised when an account is credited with a certain amount in a specific currency. It extends 'BaseEvent &lt String> &gt', indicating that it is associated with a specific aggregate identified by a 'String' value. This event is used to notify other parts of the system or external systems that an account has been credited with a specific amount in a specific currency. It's a common pattern in event-driven architectures to capture and broadcast changes to the system's state.
+<li><b>AccountCreditedEvent: </b> The 'AccountCreditedEvent' class represents an event that is raised when an account is credited with a certain amount in a specific currency. It extends 'BaseEvent &lt String &gt', indicating that it is associated with a specific aggregate identified by a 'String' value. This event is used to notify other parts of the system or external systems that an account has been credited with a specific amount in a specific currency. It's a common pattern in event-driven architectures to capture and broadcast changes to the system's state.
 
 ```
 import lombok.Getter;
